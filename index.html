@@ -32,6 +32,30 @@ window.storage = {
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 const DEFAULT_QUESTIONS = [
+  {
+    id: 1,
+    question: "d/dx [cos(x)] = \u2212sin(x)\n\nSign pattern cycle:\n\u2022 d/dx [sin(x)] = cos(x)\n\u2022 d/dx [cos(x)] = \u2212sin(x)\n\u2022 d/dx [\u2212sin(x)] = \u2212cos(x)\n\u2022 d/dx [\u2212cos(x)] = sin(x)",
+    notes: "Core trig derivative. The negative sign on cos is the common mistake.",
+    solution: "d/dx [cos(x)] = \u2212sin(x). The cycle: sin \u2192 cos \u2192 \u2212sin \u2192 \u2212cos \u2192 sin ...",
+    dateAdded: "2026-03-13",
+    attempts: ["2026-03-13"],
+  },
+  {
+    id: 2,
+    question: "d/dx [f(x)/g(x)] = [g(x)\u00b7f'(x) \u2212 f(x)\u00b7g'(x)] / [g(x)]\u00b2\n\nMnemonic: \"low d-high minus high d-low, over low squared\"\n\nDerived from product rule: rewrite f/g as f \u00b7 g\u207b\u00b9, then apply product rule + chain rule.",
+    notes: "The minus sign and ordering (g\u00b7f' first) is the common mistake.",
+    solution: "Derivation: d/dx [f \u00b7 g\u207b\u00b9] = f'\u00b7g\u207b\u00b9 + f\u00b7(\u22121)g\u207b\u00b2\u00b7g' = [g\u00b7f' \u2212 f\u00b7g'] / g\u00b2",
+    dateAdded: "2026-03-13",
+    attempts: ["2026-03-13"],
+  },
+  {
+    id: 3,
+    question: "Factor by grouping: rearrange a polynomial into two groups that share a common binomial factor, then factor out that binomial.\n\nExample: Solve 3c\u00b3 \u2212 15c = 2c\u00b2 \u2212 10\n\nStep 1: Move everything to one side \u2192 3c\u00b3 \u2212 2c\u00b2 \u2212 15c + 10 = 0\nStep 2: Group \u2192 (3c\u00b3 \u2212 2c\u00b2) + (\u221215c + 10)\nStep 3: Factor each group \u2192 c\u00b2(3c \u2212 2) \u2212 5(3c \u2212 2)\nStep 4: Factor out common binomial \u2192 (c\u00b2 \u2212 5)(3c \u2212 2) = 0",
+    notes: "Key insight: rearrange terms so each group produces the same binomial factor.",
+    solution: "(c\u00b2 \u2212 5)(3c \u2212 2) = 0\nc\u00b2 = 5 \u2192 c = \u00b1\u221a5\n3c = 2 \u2192 c = 2/3",
+    dateAdded: "2026-03-13",
+    attempts: ["2026-03-13"],
+  },
 ];
 
 /* ═══════════════════════════════════════════════════════════════════════════════ */
