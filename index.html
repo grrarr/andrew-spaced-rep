@@ -38,7 +38,7 @@ const DEFAULT_QUESTIONS = [
     notes: "Core trig derivative. The negative sign on cos is the common mistake.",
     solution: "d/dx [cos(x)] = −sin(x)\n\nSign pattern cycle:\n• d/dx [sin(x)] = cos(x)\n• d/dx [cos(x)] = −sin(x)\n• d/dx [−sin(x)] = −cos(x)\n• d/dx [−cos(x)] = sin(x)",
     dateAdded: "2026-03-13",
-    attempts: ["2026-03-13"],
+    attempts: [{ date: "2026-03-13", result: "pass" }],
   },
   {
     id: 2,
@@ -46,7 +46,7 @@ const DEFAULT_QUESTIONS = [
     notes: "The minus sign and ordering (g\u00b7f' first) is the common mistake.",
     solution: "Derivation: d/dx [f \u00b7 g\u207b\u00b9] = f'\u00b7g\u207b\u00b9 + f\u00b7(\u22121)g\u207b\u00b2\u00b7g' = [g\u00b7f' \u2212 f\u00b7g'] / g\u00b2",
     dateAdded: "2026-03-13",
-    attempts: ["2026-03-13"],
+    attempts: [{ date: "2026-03-13", result: "pass" }],
   },
   {
     id: 3,
@@ -54,7 +54,7 @@ const DEFAULT_QUESTIONS = [
     notes: "Key insight: rearrange terms so each group produces the same binomial factor.",
     solution: "(c\u00b2 \u2212 5)(3c \u2212 2) = 0\nc\u00b2 = 5 \u2192 c = \u00b1\u221a5\n3c = 2 \u2192 c = 2/3",
     dateAdded: "2026-03-13",
-    attempts: ["2026-03-13"],
+    attempts: [{ date: "2026-03-13", result: "pass" }],
   },
   {
     id: 4,
@@ -62,7 +62,7 @@ const DEFAULT_QUESTIONS = [
     notes: "Useful when height isn't given directly.",
     solution: "Area = \u00bd \u00b7 b \u00b7 c \u00b7 sin(A), where b and c are the two sides and A is the included angle between them.",
     dateAdded: "2026-03-13",
-    attempts: ["2026-03-13"],
+    attempts: [{ date: "2026-03-13", result: "pass" }],
   },
   {
     id: 5,
@@ -70,7 +70,7 @@ const DEFAULT_QUESTIONS = [
     notes: "Vieta's formula \u2014 sum only.",
     solution: "Sum of roots = \u2212b/a",
     dateAdded: "2026-03-13",
-    attempts: ["2026-03-13"],
+    attempts: [{ date: "2026-03-13", result: "pass" }],
   },
   {
     id: 6,
@@ -78,7 +78,7 @@ const DEFAULT_QUESTIONS = [
     notes: "Inverse function geometry.",
     solution: "x = f(y) is the reflection of y = f(x) over the line y = x.",
     dateAdded: "2026-03-14",
-    attempts: ["2026-03-14"],
+    attempts: [{ date: "2026-03-14", result: "pass" }],
   },
   {
     id: 7,
@@ -86,7 +86,7 @@ const DEFAULT_QUESTIONS = [
     notes: "Even multiplicity → touches and bounces; odd multiplicity → crosses through. Key for sketching polynomials from factored form.",
     solution: "Example 1: At x = 2 (multiplicity 4, even): graph touches the x-axis and reverses direction (bounces). At x = −1 (multiplicity 3, odd): graph crosses through the x-axis.\nExample 2: At x = 0 (multiplicity 2, even): graph touches the x-axis and reverses direction (bounces). At x = 3 (multiplicity 5, odd): graph crosses through the x-axis.",
     dateAdded: "2026-03-14",
-    attempts: ["2026-03-14"],
+    attempts: [{ date: "2026-03-14", result: "pass" }],
   },
   {
     id: 8,
@@ -94,7 +94,7 @@ const DEFAULT_QUESTIONS = [
     notes: "The graph is tangent (parallel) to the x-axis at multiple roots (multiplicity ≥ 2), never tangent at simple roots (multiplicity 1). Tangent here means the slope equals zero at that x-intercept.",
     solution: "Example 1: At x = 1 (multiplicity 3): multiple root, graph IS tangent to x-axis. At x = −2 (multiplicity 1): simple root, graph is NOT tangent — it crosses at an angle.\nExample 2: At x = 4 (multiplicity 2): tangent to x-axis. At x = −1 (multiplicity 2): tangent to x-axis. At x = 2 (multiplicity 1): NOT tangent — crosses at an angle.",
     dateAdded: "2026-03-14",
-    attempts: ["2026-03-14"],
+    attempts: [{ date: "2026-03-14", result: "pass" }],
   },
   {
     id: 9,
@@ -102,7 +102,7 @@ const DEFAULT_QUESTIONS = [
     notes: "Derivative multiplies by ln(a), integral divides by ln(a). When a = e, ln(e) = 1 so both reduce to eˣ.",
     solution: "d/dx [aˣ] = aˣ · ln(a)\n∫ aˣ dx = aˣ / ln(a) + C\n\nExample 1: d/dx [2ˣ] = 2ˣ · ln(2), ∫ 2ˣ dx = 2ˣ / ln(2) + C\nExample 2: d/dx [5ˣ] = 5ˣ · ln(5), ∫ 5ˣ dx = 5ˣ / ln(5) + C",
     dateAdded: "2026-03-14",
-    attempts: ["2026-03-14"],
+    attempts: [{ date: "2026-03-14", result: "pass" }],
   },
   {
     id: 10,
@@ -110,7 +110,7 @@ const DEFAULT_QUESTIONS = [
     notes: "The reference section at the top is the real value — review it each time. The rules test order-of-operations gotchas: vertical stretch eats constants vs doesn't, horizontal subs don't touch vertical stuff, and x-axis stretch uses reciprocal (factor 2 → x/2, not 2x).",
     solution: "Rule 1 — Vertical stretch AFTER vertical translation: the stretch eats the constant.\nf(x) → f(x) + 3 → 2[f(x) + 3] = 2f(x) + 6\n\nRule 2 — Vertical translation AFTER vertical stretch: the constant stays independent.\nf(x) → 4f(x) → 4f(x) + 3\n\nRule 3 — Horizontal transformations don't touch vertical constants. Replace x with (x+2), outside stuff untouched.\n2f(x) + 6 → 2f(x+2) + 6\n\nRule 4 — Horizontal stretch AFTER horizontal shift: the shift is already baked in, stretch only replaces x.\nf(x) → f(x + 9) → f(x/10 + 9)\n\nRule 5 — Horizontal shift AFTER horizontal stretch: the shift substitutes into x, which already has the stretch factor.\nf(x) → f(2x) → f(2(x − 10)) = f(2x − 20)\n\nRule 6 — x-axis stretch by factor a means replace x with x/a, NOT ax.\nFactor 2 → wider: f(x) → f(x/2). Factor ½ → compressed: f(x) → f(2x). The reciprocal is the consistent gotcha.",
     dateAdded: "2026-03-14",
-    attempts: ["2026-03-14"],
+    attempts: [{ date: "2026-03-14", result: "pass" }],
   },
   {
     id: 11,
@@ -118,7 +118,7 @@ const DEFAULT_QUESTIONS = [
     notes: "Substitute −x for every x, simplify, and compare to the original f(x).",
     solution: "Odd function: f(x) = −f(−x) — symmetric about the origin (180° rotation)\nEven function: f(x) = f(−x) — symmetric about the y-axis\nIf neither condition holds, it's neither.",
     dateAdded: "2026-03-14",
-    attempts: ["2026-03-14"],
+    attempts: [{ date: "2026-03-14", result: "pass" }],
   },
   {
     id: 12,
@@ -126,7 +126,7 @@ const DEFAULT_QUESTIONS = [
     notes: "Often confused with each other. Converse swaps, inverse negates.",
     solution: "Converse: If Q then P (swap hypothesis and conclusion)\nInverse: If not P then not Q (negate both)\n\nThe converse and inverse are logically equivalent to each other (they are contrapositives of one another).",
     dateAdded: "2026-03-22",
-    attempts: ["2026-03-22"],
+    attempts: [{ date: "2026-03-22", result: "pass" }],
   },
   {
     id: 13,
@@ -134,7 +134,7 @@ const DEFAULT_QUESTIONS = [
     notes: "Foundational modular arithmetic definition.",
     solution: "The residue of a (mod n) is the remainder when a is divided by n. It is the unique value r where 0 ≤ r < n and a ≡ r (mod n). Also sometimes called the least residue.",
     dateAdded: "2026-03-22",
-    attempts: ["2026-03-22"],
+    attempts: [{ date: "2026-03-22", result: "pass" }],
   },
   {
     id: 14,
@@ -142,7 +142,7 @@ const DEFAULT_QUESTIONS = [
     notes: "These rules let you reduce coefficients and constants mod n before combining. Intuitively: only the last digit of each component matters when computing the last digit of a sum/product.",
     solution: "Multiplication compatibility: If c ≡ c' (mod n), then c·a ≡ c'·a (mod n) for any integer a.\n\nAddition compatibility: If c ≡ c' (mod n) and d ≡ d' (mod n), then c + d ≡ c' + d' (mod n).\n\nExample: 24 ≡ 4 (mod 10) and 15 ≡ 5 (mod 10)\nSo 24a + 15b ≡ 4a + 5b (mod 10)",
     dateAdded: "2026-03-22",
-    attempts: ["2026-03-22"],
+    attempts: [{ date: "2026-03-22", result: "pass" }],
   },
 ];
 
@@ -162,10 +162,21 @@ const fmtDate = (iso) =>
 
 const getInterval = (n) => (n <= 1 ? 3 : n === 2 ? 7 : n === 3 ? 14 : 30);
 
+// Normalize attempt: string → {date, result} for migration from old format
+const normAttempt = (a) => typeof a === "string" ? { date: a, result: "pass" } : a;
+
 function getDue(q) {
-  if (!q.attempts.length) return { due: true, ago: null, next: 3 };
-  const ago = daysBetween(q.attempts[q.attempts.length - 1], TODAY);
-  const next = getInterval(q.attempts.length);
+  const attempts = q.attempts.map(normAttempt);
+  if (!attempts.length) return { due: true, ago: null, next: 3 };
+  const last = attempts[attempts.length - 1];
+  const ago = daysBetween(last.date, TODAY);
+  // Count consecutive passes from the end; a fail resets to 0
+  let streak = 0;
+  for (let i = attempts.length - 1; i >= 0; i--) {
+    if (attempts[i].result === "pass") streak++;
+    else break;
+  }
+  const next = getInterval(streak);
   return { due: ago >= next, ago, next };
 }
 
@@ -193,10 +204,11 @@ function mergeDefaults(loaded) {
     }
     return merged;
   });
-  // Add entirely new defaults not yet in storage
+  // Add entirely new defaults not yet in storage — keep original ids when possible
   let maxId = updated.reduce((m, q) => Math.max(m, q.id), 0);
+  const usedIds = new Set(updated.map((q) => q.id));
   const missing = DEFAULT_QUESTIONS.filter((d) => !matchedDefaultIds.has(d.id));
-  const merged = [...updated, ...missing.map((d) => ({ ...d, id: ++maxId }))];
+  const merged = [...updated, ...missing.map((d) => usedIds.has(d.id) ? { ...d, id: ++maxId } : d)];
   // Deduplicate by question text — keeps first occurrence (the id-matched one),
   // removes orphan duplicates left by old text-based matching
   const seenText = new Set();
@@ -227,6 +239,11 @@ async function storageLoad() {
       }
     } catch {}
   }
+  // Migrate old string-based attempts to {date, result} objects
+  qs = qs.map((q) => ({
+    ...q,
+    attempts: (q.attempts || []).map(normAttempt),
+  }));
   return mergeDefaults(qs);
 }
 
@@ -317,7 +334,7 @@ function SpacedRepTracker() {
 
   const doAdd = async () => {
     if (!addQ.trim()) return;
-    const q = { id: nextId(qs), question: addQ.trim(), notes: addN.trim(), solution: addS.trim(), dateAdded: TODAY, attempts: [TODAY] };
+    const q = { id: nextId(qs), question: addQ.trim(), notes: addN.trim(), solution: addS.trim(), dateAdded: TODAY, attempts: [{ date: TODAY, result: "pass" }] };
     const updated = [...qs, q];
     setQs(updated);
     await save(updated);
@@ -326,10 +343,20 @@ function SpacedRepTracker() {
     setTab("all");
   };
 
-  const doAttempt = async (id) => {
-    const updated = qs.map((q) =>
-      q.id === id ? { ...q, attempts: q.attempts.includes(TODAY) ? q.attempts : [...q.attempts, TODAY] } : q
-    );
+  const hasAttemptToday = (q) => q.attempts.some((a) => normAttempt(a).date === TODAY);
+
+  const doAttempt = async (id, result) => {
+    const updated = qs.map((q) => {
+      if (q.id !== id) return q;
+      // If already attempted today, replace today's result; otherwise append
+      const todayIdx = q.attempts.findIndex((a) => normAttempt(a).date === TODAY);
+      if (todayIdx >= 0) {
+        const newAttempts = [...q.attempts];
+        newAttempts[todayIdx] = { date: TODAY, result };
+        return { ...q, attempts: newAttempts };
+      }
+      return { ...q, attempts: [...q.attempts, { date: TODAY, result }] };
+    });
     setQs(updated);
     await save(updated);
   };
@@ -416,8 +443,8 @@ function SpacedRepTracker() {
 
   const sorted = [...searched].sort((a, b) => {
     if (sort === "stalest") {
-      const aL = a.attempts.length ? a.attempts[a.attempts.length - 1] : "0000";
-      const bL = b.attempts.length ? b.attempts[b.attempts.length - 1] : "0000";
+      const aL = a.attempts.length ? normAttempt(a.attempts[a.attempts.length - 1]).date : "0000";
+      const bL = b.attempts.length ? normAttempt(b.attempts[b.attempts.length - 1]).date : "0000";
       return aL < bL ? -1 : aL > bL ? 1 : 0;
     }
     if (sort === "oldest") return a.dateAdded < b.dateAdded ? -1 : 1;
@@ -524,7 +551,8 @@ function SpacedRepTracker() {
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             {sorted.map((q) => {
               const { due, ago, next } = getDue(q);
-              const doneToday = q.attempts.includes(TODAY);
+              const doneToday = hasAttemptToday(q);
+              const todayResult = doneToday ? q.attempts.map(normAttempt).find((a) => a.date === TODAY)?.result : null;
               const isExp = expanded === q.id;
               const isDel = delConfirm === q.id;
               const isEditing = editing?.id === q.id;
@@ -559,9 +587,9 @@ function SpacedRepTracker() {
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 2, flexShrink: 0 }}>
                       <div style={{ fontFamily: MONO, fontSize: 12, fontWeight: 500, padding: "2px 8px", borderRadius: 4,
-                        background: due ? C.warn + "22" : doneToday ? C.good + "22" : C.bg,
-                        color: due ? C.warn : doneToday ? C.good : C.dim }}>
-                        {agoLabel(ago)}
+                        background: due ? C.warn + "22" : todayResult === "pass" ? C.good + "22" : todayResult === "fail" ? C.danger + "22" : C.bg,
+                        color: due && !doneToday ? C.warn : todayResult === "pass" ? C.good : todayResult === "fail" ? C.danger : C.dim }}>
+                        {doneToday ? (todayResult === "pass" ? "✓ today" : "✗ today") : agoLabel(ago)}
                       </div>
                       <div style={{ fontFamily: MONO, fontSize: 10, color: C.dim }}>{q.attempts.length}x · {next}d</div>
                     </div>
@@ -574,7 +602,12 @@ function SpacedRepTracker() {
                         <div>
                           Attempts ({q.attempts.length}):{" "}
                           {q.attempts.length
-                            ? q.attempts.map((a) => `${fmtDate(a)} (${daysBetween(a, TODAY) === 0 ? "today" : daysBetween(a, TODAY) + "d ago"})`).join(", ")
+                            ? q.attempts.map(normAttempt).map((a) => {
+                                const d = daysBetween(a.date, TODAY);
+                                const icon = a.result === "pass" ? "✓" : "✗";
+                                const color = a.result === "pass" ? C.good : C.danger;
+                                return <span key={a.date + a.result} style={{ color }}>{icon}{fmtDate(a.date)} ({d === 0 ? "today" : d + "d ago"})</span>;
+                              }).reduce((acc, el, i) => i === 0 ? [el] : [...acc, ", ", el], [])
                             : "none"}
                         </div>
                         <div style={{ marginTop: 2 }}>Added {fmtDate(q.dateAdded)} · Next interval: {next}d</div>
@@ -601,10 +634,15 @@ function SpacedRepTracker() {
                         </div>
                       ) : (
                         <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                          <button onClick={(e) => { e.stopPropagation(); doAttempt(q.id); }} disabled={doneToday}
-                            style={{ ...btn(doneToday ? C.card : C.accent, doneToday ? C.dim : "#fff"),
-                              opacity: doneToday ? 0.5 : 1, cursor: doneToday ? "default" : "pointer" }}>
-                            {doneToday ? "Done today" : "Mark attempted"}
+                          <button onClick={(e) => { e.stopPropagation(); doAttempt(q.id, "pass"); }}
+                            style={{ ...btn(todayResult === "pass" ? C.good + "33" : C.good, todayResult === "pass" ? C.good : "#fff"),
+                              cursor: "pointer" }}>
+                            {todayResult === "pass" ? "✓ Got it" : "✓ Got it"}
+                          </button>
+                          <button onClick={(e) => { e.stopPropagation(); doAttempt(q.id, "fail"); }}
+                            style={{ ...btn(todayResult === "fail" ? C.danger + "33" : C.danger, todayResult === "fail" ? C.danger : "#fff"),
+                              cursor: "pointer" }}>
+                            {todayResult === "fail" ? "✗ Missed" : "✗ Missed it"}
                           </button>
                           <button onClick={(e) => { e.stopPropagation(); startEdit(q, "question"); }} style={btn(C.card, C.dim)}>Edit Q</button>
                           <button onClick={(e) => { e.stopPropagation(); startEdit(q, "notes"); }} style={btn(C.card, C.dim)}>Edit Notes</button>
