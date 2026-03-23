@@ -128,6 +128,22 @@ const DEFAULT_QUESTIONS = [
     dateAdded: "2026-03-22",
     attempts: ["2026-03-22"],
   },
+  {
+    id: 13,
+    question: "What is the residue of a modular arithmetic expression?",
+    notes: "Foundational modular arithmetic definition.",
+    solution: "The residue of a (mod n) is the remainder when a is divided by n. It is the unique value r where 0 ≤ r < n and a ≡ r (mod n). Also sometimes called the least residue.",
+    dateAdded: "2026-03-22",
+    attempts: ["2026-03-22"],
+  },
+  {
+    id: 14,
+    question: "What are the substitution/compatibility rules for modular arithmetic?\n\nGiven c ≡ c' (mod n):\n\n1. What can you say about c·a (mod n)?\n2. If also d ≡ d' (mod n), what can you say about c + d (mod n)?\n\nExample: Simplify 24a + 15b (mod 10)",
+    notes: "These rules let you reduce coefficients and constants mod n before combining. Intuitively: only the last digit of each component matters when computing the last digit of a sum/product.",
+    solution: "Multiplication compatibility: If c ≡ c' (mod n), then c·a ≡ c'·a (mod n) for any integer a.\n\nAddition compatibility: If c ≡ c' (mod n) and d ≡ d' (mod n), then c + d ≡ c' + d' (mod n).\n\nExample: 24 ≡ 4 (mod 10) and 15 ≡ 5 (mod 10)\nSo 24a + 15b ≡ 4a + 5b (mod 10)",
+    dateAdded: "2026-03-22",
+    attempts: ["2026-03-22"],
+  },
 ];
 
 /* ═══════════════════════════════════════════════════════════════════════════════ */
