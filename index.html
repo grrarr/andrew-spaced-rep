@@ -325,6 +325,7 @@ function SpacedRepTracker() {
   const [toast, setToast] = useState(null);
   const [lastExp, setLastExp] = useState(null);
   const [delConfirm, setDelConfirm] = useState(null);
+  const [addT, setAddT] = useState("");
   const [addQ, setAddQ] = useState("");
   const [addN, setAddN] = useState("");
   const [addS, setAddS] = useState("");
@@ -358,11 +359,11 @@ function SpacedRepTracker() {
 
   const doAdd = async () => {
     if (!addQ.trim()) return;
-    const q = { id: nextId(qs), question: addQ.trim(), notes: addN.trim(), solution: addS.trim(), dateAdded: TODAY, attempts: [{ date: TODAY, result: "pass" }] };
+    const q = { id: nextId(qs), title: addT.trim() || undefined, question: addQ.trim(), notes: addN.trim(), solution: addS.trim(), dateAdded: TODAY, attempts: [{ date: TODAY, result: "pass" }] };
     const updated = [...qs, q];
     setQs(updated);
     await save(updated);
-    setAddQ(""); setAddN(""); setAddS("");
+    setAddT(""); setAddQ(""); setAddN(""); setAddS("");
     flash("Added");
     setTab("all");
   };
@@ -461,6 +462,7 @@ function SpacedRepTracker() {
   const searched = search
     ? list.filter((q) =>
         q.question.toLowerCase().includes(search.toLowerCase()) ||
+        (q.title && q.title.toLowerCase().includes(search.toLowerCase())) ||
         (q.notes && q.notes.toLowerCase().includes(search.toLowerCase()))
       )
     : list;
@@ -538,6 +540,8 @@ function SpacedRepTracker() {
         {/* Add form */}
         {tab === "add" && (
           <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, padding: 16, marginBottom: 16 }}>
+            <input value={addT} onChange={(e) => setAddT(e.target.value)} placeholder="Title (optional)..."
+              style={{ ...inputStyle, fontSize: 13, marginBottom: 8 }} />
             <textarea value={addQ} onChange={(e) => setAddQ(e.target.value)} placeholder="Problem text..."
               style={{ ...inputStyle, minHeight: 80, resize: "vertical" }} />
             <input value={addN} onChange={(e) => setAddN(e.target.value)} placeholder="Notes (optional)..."
@@ -601,6 +605,7 @@ function SpacedRepTracker() {
                         </div>
                       ) : (
                         <>
+                          {q.title && <div style={{ fontSize: 11, color: C.dim, fontFamily: MONO, marginBottom: 2 }}>{q.title}</div>}
                           <div style={{ fontSize: 14, lineHeight: 1.5, whiteSpace: "pre-line", overflow: "hidden",
                             display: "-webkit-box", WebkitLineClamp: isExp ? 999 : 2, WebkitBoxOrient: "vertical" }}>
                             {q.question}
@@ -668,6 +673,7 @@ function SpacedRepTracker() {
                               cursor: "pointer" }}>
                             {todayResult === "fail" ? "✗ Missed" : "✗ Missed it"}
                           </button>
+                          <button onClick={(e) => { e.stopPropagation(); startEdit(q, "title"); }} style={btn(C.card, C.dim)}>Edit Title</button>
                           <button onClick={(e) => { e.stopPropagation(); startEdit(q, "question"); }} style={btn(C.card, C.dim)}>Edit Q</button>
                           <button onClick={(e) => { e.stopPropagation(); startEdit(q, "notes"); }} style={btn(C.card, C.dim)}>Edit Notes</button>
                           <button onClick={(e) => { e.stopPropagation(); startEdit(q, "solution"); }} style={btn(C.card, C.dim)}>Edit Solution</button>
