@@ -1,0 +1,227 @@
+{
+  "version": 1,
+  "updated": "2026-03-31",
+  "questions": [
+    {
+      "id": 1,
+      "question": "d/dx [cos(x)] = ?\n\nWhat is the full sign pattern cycle for derivatives of sin/cos?",
+      "notes": "Core trig derivative. The negative sign on cos is the common mistake.",
+      "solution": "d/dx [cos(x)] = −sin(x)\n\nSign pattern cycle:\n• d/dx [sin(x)] = cos(x)\n• d/dx [cos(x)] = −sin(x)\n• d/dx [−sin(x)] = −cos(x)\n• d/dx [−cos(x)] = sin(x)",
+      "dateAdded": "2026-03-13",
+      "attempts": [
+        {
+          "date": "2026-03-13",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "d/dx [f(x)/g(x)] = [g(x)·f'(x) − f(x)·g'(x)] / [g(x)]²\n\nMnemonic: \"low d-high minus high d-low, over low squared\"\n\nDerived from product rule: rewrite f/g as f · g⁻¹, then apply product rule + chain rule.",
+      "notes": "The minus sign and ordering (g·f' first) is the common mistake.",
+      "solution": "Derivation: d/dx [f · g⁻¹] = f'·g⁻¹ + f·(−1)g⁻²·g' = [g·f' − f·g'] / g²",
+      "dateAdded": "2026-03-13",
+      "attempts": [
+        {
+          "date": "2026-03-13",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Factor by grouping: rearrange a polynomial into two groups that share a common binomial factor, then factor out that binomial.\n\nExample: Solve 3c³ − 15c = 2c² − 10\n\nStep 1: Move everything to one side → 3c³ − 2c² − 15c + 10 = 0\nStep 2: Group → (3c³ − 2c²) + (−15c + 10)\nStep 3: Factor each group → c²(3c − 2) − 5(3c − 2)\nStep 4: Factor out common binomial → (c² − 5)(3c − 2) = 0",
+      "notes": "Key insight: rearrange terms so each group produces the same binomial factor.",
+      "solution": "(c² − 5)(3c − 2) = 0\nc² = 5 → c = ±√5\n3c = 2 → c = 2/3",
+      "dateAdded": "2026-03-13",
+      "attempts": [
+        {
+          "date": "2026-03-13",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "When you know two sides and the included angle (SAS) instead of base and height, what is the area formula using trig?",
+      "notes": "Useful when height isn't given directly.",
+      "solution": "Area = ½ · b · c · sin(A), where b and c are the two sides and A is the included angle between them.",
+      "dateAdded": "2026-03-13",
+      "attempts": [
+        {
+          "date": "2026-03-13",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "For a quadratic ax² + bx + c = 0, what is the sum of the roots?",
+      "notes": "Vieta's formula — sum only.",
+      "solution": "Sum of roots = −b/a",
+      "dateAdded": "2026-03-13",
+      "attempts": [
+        {
+          "date": "2026-03-13",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "If you know the graph of y = f(x), how do you graph x = f(y)?",
+      "notes": "Inverse function geometry.",
+      "solution": "x = f(y) is the reflection of y = f(x) over the line y = x.",
+      "dateAdded": "2026-03-14",
+      "attempts": [
+        {
+          "date": "2026-03-14",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "How does a polynomial's graph behave at roots of even vs odd multiplicity?\n\nExample 1: f(x) = (x − 2)⁴(x + 1)³ — describe the graph's behavior at x = 2 and x = −1.\nExample 2: g(x) = x²(x − 3)⁵ — describe the graph's behavior at x = 0 and x = 3.",
+      "notes": "Even multiplicity → touches and bounces; odd multiplicity → crosses through. Key for sketching polynomials from factored form.",
+      "solution": "Example 1: At x = 2 (multiplicity 4, even): graph touches the x-axis and reverses direction (bounces). At x = −1 (multiplicity 3, odd): graph crosses through the x-axis.\nExample 2: At x = 0 (multiplicity 2, even): graph touches the x-axis and reverses direction (bounces). At x = 3 (multiplicity 5, odd): graph crosses through the x-axis.",
+      "dateAdded": "2026-03-14",
+      "attempts": [
+        {
+          "date": "2026-03-14",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What is the relationship between root multiplicity and tangency to the x-axis?\n\nExample 1: f(x) = (x − 1)³(x + 2) — at which roots is the graph tangent to the x-axis?\nExample 2: g(x) = (x − 4)²(x + 1)²(x − 2) — at which roots is the graph tangent to the x-axis?",
+      "notes": "The graph is tangent (parallel) to the x-axis at multiple roots (multiplicity ≥ 2), never tangent at simple roots (multiplicity 1). Tangent here means the slope equals zero at that x-intercept.",
+      "solution": "Example 1: At x = 1 (multiplicity 3): multiple root, graph IS tangent to x-axis. At x = −2 (multiplicity 1): simple root, graph is NOT tangent — it crosses at an angle.\nExample 2: At x = 4 (multiplicity 2): tangent to x-axis. At x = −1 (multiplicity 2): tangent to x-axis. At x = 2 (multiplicity 1): NOT tangent — crosses at an angle.",
+      "dateAdded": "2026-03-14",
+      "attempts": [
+        {
+          "date": "2026-03-14",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What are d/dx [aˣ] and ∫ aˣ dx?\n\nExample 1: Find d/dx [2ˣ] and ∫ 2ˣ dx\nExample 2: Find d/dx [5ˣ] and ∫ 5ˣ dx",
+      "notes": "Derivative multiplies by ln(a), integral divides by ln(a). When a = e, ln(e) = 1 so both reduce to eˣ.",
+      "solution": "d/dx [aˣ] = aˣ · ln(a)\n∫ aˣ dx = aˣ / ln(a) + C\n\nExample 1: d/dx [2ˣ] = 2ˣ · ln(2), ∫ 2ˣ dx = 2ˣ / ln(2) + C\nExample 2: d/dx [5ˣ] = 5ˣ · ln(5), ∫ 5ˣ dx = 5ˣ / ln(5) + C",
+      "dateAdded": "2026-03-14",
+      "attempts": [
+        {
+          "date": "2026-03-14",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Function Transformation Reference:\n\nVertical (act on the outside — affect y):\n• Translate up by a: y = g(x) → y = g(x) + a\n• Translate down by a: y = g(x) → y = g(x) − a\n• Stretch by factor a parallel to y-axis: y = g(x) → y = a · g(x)\n\nHorizontal (act on the inside — replace x):\n• Translate left by a: y = g(x) → y = g(x + a)\n• Translate right by a: y = g(x) → y = g(x − a)\n• Stretch by factor a parallel to x-axis: y = g(x) → y = g(x/a)\n\nGeneral algo: For each transformation in sequence:\n1. If vertical: operate on the entire expression from outside\n2. If horizontal: find every instance of x and substitute\n\nApply the transformation sequences below:\n\nRule 1 — Translate up 3 then stretch by 2 in y: f(x) → ?\nRule 2 — Stretch by 4 in y then translate up 3: f(x) → ?\nRule 3 — Given 2f(x) + 6, translate left 2: → ?\nRule 4 — Translate left 9 then stretch by 10 in x: f(x) → ?\nRule 5 — Stretch by ½ in x then translate right 10: f(x) → ?\nRule 6 — Stretch by factor 2 parallel to x-axis: f(x) → ?",
+      "notes": "The reference section at the top is the real value — review it each time. The rules test order-of-operations gotchas: vertical stretch eats constants vs doesn't, horizontal subs don't touch vertical stuff, and x-axis stretch uses reciprocal (factor 2 → x/2, not 2x).",
+      "solution": "Rule 1 — Vertical stretch AFTER vertical translation: the stretch eats the constant.\nf(x) → f(x) + 3 → 2[f(x) + 3] = 2f(x) + 6\n\nRule 2 — Vertical translation AFTER vertical stretch: the constant stays independent.\nf(x) → 4f(x) → 4f(x) + 3\n\nRule 3 — Horizontal transformations don't touch vertical constants. Replace x with (x+2), outside stuff untouched.\n2f(x) + 6 → 2f(x+2) + 6\n\nRule 4 — Horizontal stretch AFTER horizontal shift: the shift is already baked in, stretch only replaces x.\nf(x) → f(x + 9) → f(x/10 + 9)\n\nRule 5 — Horizontal shift AFTER horizontal stretch: the shift substitutes into x, which already has the stretch factor.\nf(x) → f(2x) → f(2(x − 10)) = f(2x − 20)\n\nRule 6 — x-axis stretch by factor a means replace x with x/a, NOT ax.\nFactor 2 → wider: f(x) → f(x/2). Factor ½ → compressed: f(x) → f(2x). The reciprocal is the consistent gotcha.",
+      "dateAdded": "2026-03-14",
+      "attempts": [
+        {
+          "date": "2026-03-14",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "Define odd and even functions algebraically.\n\nWhat does each tell you about the graph's symmetry?\n\nExample 1: Is f(x) = x⁴ − 3x² + 1 even, odd, or neither? Describe its symmetry.\nExample 2: Is f(x) = x³ − 2x even, odd, or neither? Describe its symmetry.\nExample 3: Is f(x) = x² + x even, odd, or neither?",
+      "notes": "Substitute −x for every x, simplify, and compare to the original f(x). Also tests geometric understanding.",
+      "solution": "Even function: f(−x) = f(x) — symmetric about the y-axis.\nOdd function: f(−x) = −f(x) — symmetric about the origin (180° rotation).\nIf neither condition holds, it's neither.\n\nExample 1: f(−x) = (−x)⁴ − 3(−x)² + 1 = x⁴ − 3x² + 1 = f(x). Even — symmetric about the y-axis.\nExample 2: f(−x) = (−x)³ − 2(−x) = −x³ + 2x = −(x³ − 2x) = −f(x). Odd — symmetric about the origin.\nExample 3: f(−x) = (−x)² + (−x) = x² − x ≠ f(x) and ≠ −f(x). Neither.",
+      "dateAdded": "2026-03-14",
+      "attempts": [
+        {
+          "date": "2026-03-14",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Given a statement \"If P then Q\":\n\nWhat is the converse?\nWhat is the inverse?\nWhat is the relationship between the converse and inverse?",
+      "notes": "Often confused with each other. Converse swaps, inverse negates.",
+      "solution": "Converse: If Q then P (swap hypothesis and conclusion)\nInverse: If not P then not Q (negate both)\n\nThe converse and inverse are logically equivalent to each other (they are contrapositives of one another).",
+      "dateAdded": "2026-03-22",
+      "attempts": [
+        {
+          "date": "2026-03-22",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "What is the residue of a modular arithmetic expression?",
+      "notes": "Foundational modular arithmetic definition.",
+      "solution": "The residue of a (mod n) is the remainder when a is divided by n. It is the unique value r where 0 ≤ r < n and a ≡ r (mod n). Also sometimes called the least residue.",
+      "dateAdded": "2026-03-22",
+      "attempts": [
+        {
+          "date": "2026-03-22",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What are the substitution/compatibility rules for modular arithmetic?\n\nGiven c ≡ c' (mod n):\n\n1. What can you say about c·a (mod n)?\n2. If also d ≡ d' (mod n), what can you say about c + d (mod n)?\n\nExample: Simplify 24a + 15b (mod 10)",
+      "notes": "These rules let you reduce coefficients and constants mod n before combining. Intuitively: only the last digit of each component matters when computing the last digit of a sum/product.",
+      "solution": "Multiplication compatibility: If c ≡ c' (mod n), then c·a ≡ c'·a (mod n) for any integer a.\n\nAddition compatibility: If c ≡ c' (mod n) and d ≡ d' (mod n), then c + d ≡ c' + d' (mod n).\n\nExample: 24 ≡ 4 (mod 10) and 15 ≡ 5 (mod 10)\nSo 24a + 15b ≡ 4a + 5b (mod 10)",
+      "dateAdded": "2026-03-22",
+      "attempts": [
+        {
+          "date": "2026-03-22",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "What is a vacuous proof? What is a trivial proof?\n\nFor each: which part of \"If P then Q\" makes the proof work, and why?",
+      "notes": "These are the two \"easy\" proof techniques for conditional statements. One exploits the hypothesis, the other the conclusion.",
+      "solution": "Vacuous proof: P is always false, so \"If P then Q\" is automatically true (regardless of Q). The hypothesis can never be satisfied, so the implication holds vacuously.\n\nTrivial proof: Q is always true, so \"If P then Q\" is automatically true (regardless of P). The conclusion is always satisfied, so the implication holds trivially.\n\nKey insight: A conditional \"If P then Q\" is only false when P is true and Q is false. If P is always false (vacuous) or Q is always true (trivial), the conditional is guaranteed true.",
+      "dateAdded": "2026-03-23",
+      "attempts": [
+        {
+          "date": "2026-03-23",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Five rules about multiplying in modular arithmetic:\n\n1. If a ≡ b (mod n), what happens when you multiply both sides AND the modulus by k?\n2. If a ≡ b (mod n), what happens when you multiply both sides by k but keep the modulus?\n3. If a ≡ b and c ≡ d (mod n), what can you say about a·c?\n4. If a ≡ b (mod n), what can you say about aᵏ for positive integer k?\n5. If k·a ≡ k·b (mod n), can you cancel k? Under what condition?",
+      "notes": "Rules 1–4 always work. Rule 5 (cancellation / division) is the trap.",
+      "solution": "1. Scaling both sides and modulus: a ≡ b (mod n) ⟹ ka ≡ kb (mod kn). Always valid.\n   Example: 7 ≡ 2 (mod 5) ⟹ 21 ≡ 6 (mod 15) ✓\n\n2. Multiplying both sides only: a ≡ b (mod n) ⟹ ka ≡ kb (mod n). Always valid.\n   Example: 7 ≡ 2 (mod 5) ⟹ 21 ≡ 6 (mod 5) ✓\n\n3. Multiplying two congruences: if a ≡ b and c ≡ d (mod n), then ac ≡ bd (mod n). Always valid.\n   Example: 7 ≡ 2 and 8 ≡ 3 (mod 5) ⟹ 56 ≡ 6 (mod 5) ✓ (both are 1 mod 5)\n\n4. Exponentiation: if a ≡ b (mod n), then aᵏ ≡ bᵏ (mod n) for any positive integer k. Always valid.\n   (Follows from applying rule 3 repeatedly with the same congruence.)\n   Example: 7 ≡ 2 (mod 5) ⟹ 7³ ≡ 2³ (mod 5) ⟹ 343 ≡ 8 ≡ 3 (mod 5) ✓\n\n5. Cancellation: k·a ≡ k·b (mod n) does NOT always mean a ≡ b (mod n).\n   You can only cancel k if gcd(k, n) = 1 (k and n are coprime).\n   Counterexample: 2·1 ≡ 2·4 (mod 6) ⟹ 2 ≡ 8 (mod 6) ✓, but 1 ≢ 4 (mod 6).\n   General: k·a ≡ k·b (mod n) ⟹ a ≡ b (mod n/gcd(k,n)).",
+      "dateAdded": "2026-03-23",
+      "attempts": [
+        {
+          "date": "2026-03-23",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "What is the Euclidean algorithm and what does it compute?\n\nFind gcd(252, 105).\nFind gcd(1071, 462).",
+      "notes": "The most efficient method for finding GCD. Repeatedly replace the larger number with the remainder of dividing the two. Stops when remainder is 0.",
+      "solution": "The Euclidean algorithm computes gcd(a, b) by repeatedly applying: gcd(a, b) = gcd(b, a mod b), until the remainder is 0. The last nonzero remainder is the GCD.\n\nExample 1: gcd(252, 105)\n252 = 2 × 105 + 42\n105 = 2 × 42 + 21\n42 = 2 × 21 + 0\ngcd(252, 105) = 21\n\nExample 2: gcd(1071, 462)\n1071 = 2 × 462 + 147\n462 = 3 × 147 + 21\n147 = 7 × 21 + 0\ngcd(1071, 462) = 21",
+      "dateAdded": "2026-03-23",
+      "attempts": [
+        {
+          "date": "2026-03-23",
+          "result": "pass"
+        }
+      ]
+    }
+  ]
+}
