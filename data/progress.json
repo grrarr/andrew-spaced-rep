@@ -63,7 +63,7 @@
     },
     {
       "id": 4,
-      "question": "When you know two sides and the included angle (SAS) instead of base and height, what is the area formula using trig? [Also prove it]",
+      "question": "When you know two sides and the included angle (SAS) instead of base and height, what is the area formula using trig?",
       "notes": "Useful when height isn't given directly.",
       "solution": "Area = ½ · b · c · sin(A), where b and c are the two sides and A is the included angle between them.",
       "dateAdded": "2026-03-13",
@@ -130,7 +130,7 @@
     },
     {
       "id": 7,
-      "question": "How does a polynomial's graph behave at roots of even vs odd multiplicity? how is multiplicity = 1 special?\n\nExample 1: f(x) = (x − 2)⁴(x + 1)³ — describe the graph's behavior at x = 2 and x = −1.\nExample 2: g(x) = x²(x − 3)⁵ — describe the graph's behavior at x = 0 and x = 3.",
+      "question": "How does a polynomial's graph behave at roots of even vs odd multiplicity?\n\nExample 1: f(x) = (x − 2)⁴(x + 1)³ — describe the graph's behavior at x = 2 and x = −1.\nExample 2: g(x) = x²(x − 3)⁵ — describe the graph's behavior at x = 0 and x = 3.",
       "notes": "Even multiplicity → touches and bounces; odd multiplicity → crosses through. Key for sketching polynomials from factored form.",
       "solution": "Example 1: At x = 2 (multiplicity 4, even): graph touches the x-axis and reverses direction (bounces). At x = −1 (multiplicity 3, odd): graph crosses through the x-axis.\nExample 2: At x = 0 (multiplicity 2, even): graph touches the x-axis and reverses direction (bounces). At x = 3 (multiplicity 5, odd): graph crosses through the x-axis.",
       "dateAdded": "2026-03-14",
@@ -153,7 +153,7 @@
       "id": 8,
       "question": "What is the relationship between root multiplicity and tangency to the x-axis?\n\nExample 1: f(x) = (x − 1)³(x + 2) — at which roots is the graph tangent to the x-axis?\nExample 2: g(x) = (x − 4)²(x + 1)²(x − 2) — at which roots is the graph tangent to the x-axis?",
       "notes": "The graph is tangent (parallel) to the x-axis at multiple roots (multiplicity ≥ 2), never tangent at simple roots (multiplicity 1). Tangent here means the slope equals zero at that x-intercept.",
-      "solution": "multiplicity = 1 is nontangent!\nExample 1: At x = 1 (multiplicity 3): multiple root, graph IS tangent to x-axis. At x = −2 (multiplicity 1): simple root, graph is NOT tangent — it crosses at an angle.\nExample 2: At x = 4 (multiplicity 2): tangent to x-axis. At x = −1 (multiplicity 2): tangent to x-axis. At x = 2 (multiplicity 1): NOT tangent — crosses at an angle.",
+      "solution": "Example 1: At x = 1 (multiplicity 3): multiple root, graph IS tangent to x-axis. At x = −2 (multiplicity 1): simple root, graph is NOT tangent — it crosses at an angle.\nExample 2: At x = 4 (multiplicity 2): tangent to x-axis. At x = −1 (multiplicity 2): tangent to x-axis. At x = 2 (multiplicity 1): NOT tangent — crosses at an angle.",
       "dateAdded": "2026-03-14",
       "attempts": [
         {
@@ -193,7 +193,7 @@
     },
     {
       "id": 10,
-      "question": "Function Transformation Reference:\n\nVertical (act on the outside — affect y):\n• Translate up by a: y = g(x) → y = g(x) + a\n• Translate down by a: y = g(x) → y = g(x) − a\n• Stretch by factor a parallel to y-axis: y = g(x) → y = a · g(x)\n\nHorizontal (act on the inside — replace x):\n• Translate left by a: y = g(x) → y = g(x + a)\n• Translate right by a: y = g(x) → y = g(x − a)\n• Stretch by factor a parallel to x-axis: y = g(x) → y = g(x/a)\n\nGeneral algo: For each transformation in sequence:\n1. If vertical: operate on the entire expression from outside\n2. If horizontal: find every instance of x and substitute\n\nApply the transformation sequences below:\n\nRule 1 — Translate up 3 then stretch by 2 in y: f(x) → ?\nRule 2 — Stretch by 4 in y then translate up 3: f(x) → ?\nRule 3 — Given 2f(x) + 6, translate left 2: → ?\nRule 4 — Translate left 9 then stretch by 10 in x: f(x) → ?\nRule 5 — Stretch by ½ in x then translate right 10: f(x) → ?\nRule 6 — Stretch by factor 2 parallel to x-axis: f(x) → ?",
+      "question": "Function Transformation Reference:\n\nVertical (act on the outside — affect y):\n• Translate up by a: y = g(x) → y = g(x) + a\n• Stretch by factor a parallel to y-axis: y = g(x) → y = a · g(x)\n\nHorizontal (act on the inside — replace x):\n• Translate left by a: y = g(x) → y = g(x + a)\n• Translate right by a: y = g(x) → y = g(x − a)\n• Stretch by factor a parallel to x-axis: y = g(x) → y = g(x/a)\n\nGeneral algo: For each transformation in sequence:\n1. If vertical: operate on the entire expression from outside\n2. If horizontal: find every instance of x and substitute\n\nApply the transformation sequences below:\n\nRule 1 — Translate up 3 then stretch by 2 in y: f(x) → ?\nRule 2 — Stretch by 4 in y then translate up 3: f(x) → ?\nRule 3 — Given 2f(x) + 6, translate left 2: → ?\nRule 4 — Translate left 9 then stretch by 10 in x: f(x) → ?\nRule 5 — Stretch by ½ in x then translate right 10: f(x) → ?\nRule 6 — Stretch by factor 2 parallel to x-axis: f(x) → ?",
       "notes": "The reference section at the top is the real value — review it each time. The rules test order-of-operations gotchas: vertical stretch eats constants vs doesn't, horizontal subs don't touch vertical stuff, and x-axis stretch uses reciprocal (factor 2 → x/2, not 2x).",
       "solution": "Rule 1 — Vertical stretch AFTER vertical translation: the stretch eats the constant.\nf(x) → f(x) + 3 → 2[f(x) + 3] = 2f(x) + 6\n\nRule 2 — Vertical translation AFTER vertical stretch: the constant stays independent.\nf(x) → 4f(x) → 4f(x) + 3\n\nRule 3 — Horizontal transformations don't touch vertical constants. Replace x with (x+2), outside stuff untouched.\n2f(x) + 6 → 2f(x+2) + 6\n\nRule 4 — Horizontal stretch AFTER horizontal shift: the shift is already baked in, stretch only replaces x.\nf(x) → f(x + 9) → f(x/10 + 9)\n\nRule 5 — Horizontal shift AFTER horizontal stretch: the shift substitutes into x, which already has the stretch factor.\nf(x) → f(2x) → f(2(x − 10)) = f(2x − 20)\n\nRule 6 — x-axis stretch by factor a means replace x with x/a, NOT ax.\nFactor 2 → wider: f(x) → f(x/2). Factor ½ → compressed: f(x) → f(2x). The reciprocal is the consistent gotcha.",
       "dateAdded": "2026-03-14",
