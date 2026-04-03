@@ -63,7 +63,7 @@
     },
     {
       "id": 4,
-      "question": "When you know two sides and the included angle (SAS) instead of base and height, what is the area formula using trig?",
+      "question": "When you know two sides and the included angle (SAS) instead of base and height, what is the area formula using trig? [Also prove it]",
       "notes": "Useful when height isn't given directly.",
       "solution": "Area = ½ · b · c · sin(A), where b and c are the two sides and A is the included angle between them.",
       "dateAdded": "2026-03-13",
