@@ -149,7 +149,7 @@
       "id": 8,
       "question": "What is the relationship between root multiplicity and tangency to the x-axis?\n\nExample 1: f(x) = (x − 1)³(x + 2) — at which roots is the graph tangent to the x-axis?\nExample 2: g(x) = (x − 4)²(x + 1)²(x − 2) — at which roots is the graph tangent to the x-axis?",
       "notes": "The graph is tangent (parallel) to the x-axis at multiple roots (multiplicity ≥ 2), never tangent at simple roots (multiplicity 1). Tangent here means the slope equals zero at that x-intercept.",
-      "solution": "Example 1: At x = 1 (multiplicity 3): multiple root, graph IS tangent to x-axis. At x = −2 (multiplicity 1): simple root, graph is NOT tangent — it crosses at an angle.\nExample 2: At x = 4 (multiplicity 2): tangent to x-axis. At x = −1 (multiplicity 2): tangent to x-axis. At x = 2 (multiplicity 1): NOT tangent — crosses at an angle.",
+      "solution": "multiplicity = 1 is nontangent!\nExample 1: At x = 1 (multiplicity 3): multiple root, graph IS tangent to x-axis. At x = −2 (multiplicity 1): simple root, graph is NOT tangent — it crosses at an angle.\nExample 2: At x = 4 (multiplicity 2): tangent to x-axis. At x = −1 (multiplicity 2): tangent to x-axis. At x = 2 (multiplicity 1): NOT tangent — crosses at an angle.",
       "dateAdded": "2026-03-14",
       "attempts": [
         {
