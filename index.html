@@ -168,6 +168,14 @@ const DEFAULT_QUESTIONS = [
     dateAdded: "2026-03-23",
     attempts: [{ date: "2026-03-23", result: "pass" }],
   },
+  {
+    id: 18,
+    question: "Simplify √(p + q√n) into the form a + b√n.\n\nMethod: Assume the answer is a + b√n. Square both sides: (a + b√n)² = a² + b²n + 2ab√n. Match parts: p = a² + b²n, q = 2ab. Solve for a and b.\n\nExample 1: Simplify √(3 + 2√2).\nExample 2: Simplify √(5 + 2√6).",
+    notes: "Denesting nested radicals. Square the assumed form, match rational and irrational parts, solve the system.",
+    solution: "Example 1: √(3 + 2√2). Assume a + b√2.\np = a² + 2b² = 3, q = 2ab = 2 → ab = 1 → b = 1/a.\na² + 2/a² = 3 → a⁴ − 3a² + 2 = 0 → (a²−1)(a²−2) = 0 → a² = 1, so a = 1, b = 1.\nAnswer: 1 + √2.\nVerify: (1 + √2)² = 1 + 2√2 + 2 = 3 + 2√2 ✓\n\nExample 2: √(5 + 2√6). Assume a + b√6.\np = a² + 6b² = 5, q = 2ab = 2 → ab = 1 → b = 1/a.\na² + 6/a² = 5 → a⁴ − 5a² + 6 = 0 → (a²−2)(a²−3) = 0 → a² = 2 or a² = 3.\na² = 2: a = √2, b = 1/√2 = √2/2. Answer: √2 + (√2/2)√6 = √2 + √3.\nVerify: (√2 + √3)² = 2 + 2√6 + 3 = 5 + 2√6 ✓",
+    dateAdded: "2026-04-02",
+    attempts: [{ date: "2026-04-02", result: "pass" }],
+  },
 ];
 
 /* ═══════════════════════════════════════════════════════════════════════════════ */
