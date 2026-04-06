@@ -34,6 +34,8 @@ window.storage = {
 const DEFAULT_QUESTIONS = [
   {
     id: 1,
+    kind: "concept",
+    tags: [],
     question: "d/dx [cos(x)] = ?\n\nWhat is the full sign pattern cycle for derivatives of sin/cos?",
     notes: "Core trig derivative. The negative sign on cos is the common mistake.",
     solution: "d/dx [cos(x)] = −sin(x)\n\nSign pattern cycle:\n• d/dx [sin(x)] = cos(x)\n• d/dx [cos(x)] = −sin(x)\n• d/dx [−sin(x)] = −cos(x)\n• d/dx [−cos(x)] = sin(x)",
@@ -42,6 +44,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 2,
+    kind: "concept",
+    tags: [],
     question: "d/dx [f(x)/g(x)] = [g(x)\u00b7f'(x) \u2212 f(x)\u00b7g'(x)] / [g(x)]\u00b2\n\nMnemonic: \"low d-high minus high d-low, over low squared\"\n\nDerived from product rule: rewrite f/g as f \u00b7 g\u207b\u00b9, then apply product rule + chain rule.",
     notes: "The minus sign and ordering (g\u00b7f' first) is the common mistake.",
     solution: "Derivation: d/dx [f \u00b7 g\u207b\u00b9] = f'\u00b7g\u207b\u00b9 + f\u00b7(\u22121)g\u207b\u00b2\u00b7g' = [g\u00b7f' \u2212 f\u00b7g'] / g\u00b2",
@@ -50,6 +54,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 3,
+    kind: "concept",
+    tags: [],
     question: "Factor by grouping: rearrange a polynomial into two groups that share a common binomial factor, then factor out that binomial.\n\nExample: Solve 3c\u00b3 \u2212 15c = 2c\u00b2 \u2212 10\n\nStep 1: Move everything to one side \u2192 3c\u00b3 \u2212 2c\u00b2 \u2212 15c + 10 = 0\nStep 2: Group \u2192 (3c\u00b3 \u2212 2c\u00b2) + (\u221215c + 10)\nStep 3: Factor each group \u2192 c\u00b2(3c \u2212 2) \u2212 5(3c \u2212 2)\nStep 4: Factor out common binomial \u2192 (c\u00b2 \u2212 5)(3c \u2212 2) = 0",
     notes: "Key insight: rearrange terms so each group produces the same binomial factor.",
     solution: "(c\u00b2 \u2212 5)(3c \u2212 2) = 0\nc\u00b2 = 5 \u2192 c = \u00b1\u221a5\n3c = 2 \u2192 c = 2/3",
@@ -58,6 +64,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 4,
+    kind: "concept",
+    tags: [],
     question: "When you know two sides and the included angle (SAS) instead of base and height, what is the area formula using trig?",
     notes: "Useful when height isn't given directly.",
     solution: "Area = \u00bd \u00b7 b \u00b7 c \u00b7 sin(A), where b and c are the two sides and A is the included angle between them.",
@@ -66,6 +74,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 5,
+    kind: "concept",
+    tags: [],
     question: "For a quadratic ax\u00b2 + bx + c = 0, what is the sum of the roots?",
     notes: "Vieta's formula \u2014 sum only.",
     solution: "Sum of roots = \u2212b/a",
@@ -74,6 +84,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 6,
+    kind: "concept",
+    tags: [],
     question: "If you know the graph of y = f(x), how do you graph x = f(y)?",
     notes: "Inverse function geometry.",
     solution: "x = f(y) is the reflection of y = f(x) over the line y = x.",
@@ -82,6 +94,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 7,
+    kind: "concept",
+    tags: [],
     question: "How does a polynomial's graph behave at roots of even vs odd multiplicity? how is multiplicity = 1 special?\n\nExample 1: f(x) = (x − 2)⁴(x + 1)³ — describe the graph's behavior at x = 2 and x = −1.\nExample 2: g(x) = x²(x − 3)⁵ — describe the graph's behavior at x = 0 and x = 3.",
     notes: "Even multiplicity → touches and bounces; odd multiplicity → crosses through. Key for sketching polynomials from factored form.",
     solution: "Example 1: At x = 2 (multiplicity 4, even): graph touches the x-axis and reverses direction (bounces). At x = −1 (multiplicity 3, odd): graph crosses through the x-axis.\nExample 2: At x = 0 (multiplicity 2, even): graph touches the x-axis and reverses direction (bounces). At x = 3 (multiplicity 5, odd): graph crosses through the x-axis.",
@@ -90,6 +104,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 8,
+    kind: "concept",
+    tags: [],
     question: "What is the relationship between root multiplicity and tangency to the x-axis?\n\nExample 1: f(x) = (x − 1)³(x + 2) — at which roots is the graph tangent to the x-axis?\nExample 2: g(x) = (x − 4)²(x + 1)²(x − 2) — at which roots is the graph tangent to the x-axis?",
     notes: "The graph is tangent (parallel) to the x-axis at multiple roots (multiplicity ≥ 2), never tangent at simple roots (multiplicity 1). Tangent here means the slope equals zero at that x-intercept.",
     solution: "multiplicity = 1 is nontangent!\nExample 1: At x = 1 (multiplicity 3): multiple root, graph IS tangent to x-axis. At x = −2 (multiplicity 1): simple root, graph is NOT tangent — it crosses at an angle.\nExample 2: At x = 4 (multiplicity 2): tangent to x-axis. At x = −1 (multiplicity 2): tangent to x-axis. At x = 2 (multiplicity 1): NOT tangent — crosses at an angle.",
@@ -98,6 +114,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 9,
+    kind: "concept",
+    tags: [],
     question: "What are d/dx [aˣ] and ∫ aˣ dx?\n\nExample 1: Find d/dx [2ˣ] and ∫ 2ˣ dx\nExample 2: Find d/dx [5ˣ] and ∫ 5ˣ dx",
     notes: "Derivative multiplies by ln(a), integral divides by ln(a). When a = e, ln(e) = 1 so both reduce to eˣ.",
     solution: "d/dx [aˣ] = aˣ · ln(a)\n∫ aˣ dx = aˣ / ln(a) + C\n\nExample 1: d/dx [2ˣ] = 2ˣ · ln(2), ∫ 2ˣ dx = 2ˣ / ln(2) + C\nExample 2: d/dx [5ˣ] = 5ˣ · ln(5), ∫ 5ˣ dx = 5ˣ / ln(5) + C",
@@ -106,6 +124,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 10,
+    kind: "concept",
+    tags: [],
     question: "Function Transformation Reference:\n\nVertical (outside — affect y):\n• Shift up/down: f(x) ± a\n• Stretch: a·f(x)\n• Reflect x-axis: −f(x)\n\nHorizontal (inside — replace x):\n• Shift left/right: f(x+a) / f(x−a)\n• Stretch by factor a: f(x/a) — NOT f(ax)!\n• Reflect y-axis: f(−x)\n\nAlgo: vertical → operate outside. Horizontal → substitute into every x.\nKey: horizontal transforms only touch x. Vertical transforms only touch the outside. Previous transforms from the other direction are invisible to the current one.\n\nSolve each:\nRule 1 — Shift left 5 then stretch by 3 in x: f(x) → ?\nRule 2 — Stretch by 3 in x then shift left 5: f(x) → ?\nRule 3 — Given 4f(x) − 1, shift right 6: → ?\nRule 4 — Stretch by ½ in x then shift left 7 then reflect y-axis: f(x) → ?\nRule 5 — Shift right 2 then stretch by 4 in x: f(x) → ?\nRule 6 — Given f(3x − 9), reflect across y-axis: → ?\nRule 7 — Given 3f(x+2) − 5, reflect across x-axis: → ?\nRule 8 — Stretch by 2 in y, shift up 4, then reflect x-axis: f(x) → ?",
     notes: "Focus on chained horizontal transforms and reflections applied on top of existing transforms. Key insight: reflect y-axis replaces bare x with −x (constants from prior shifts don't get negated). Reflect x-axis negates the entire outside (all vertical stuff flips). Reciprocal gotcha: factor 3 in x → x/3.",
     solution: "Rule 1 — Shift first, then stretch replaces bare x:\nf(x) → f(x+5) → f(x/3 + 5)\n\nRule 2 — Stretch first, then shift replaces bare x:\nf(x) → f(x/3) → f((x+5)/3)\n\nRule 3 — Horizontal sub only touches x, vertical stuff untouched:\n4f(x) − 1 → 4f(x−6) − 1\n\nRule 4 — Three chained horizontals, left to right:\nf(x) → f(2x) → f(2(x+7)) = f(2x+14) → f(2(−x)+14) = f(−2x+14)\n\nRule 5 — Shift first, then stretch replaces bare x:\nf(x) → f(x−2) → f(x/4 − 2)\n\nRule 6 — Reflect y-axis = replace x with −x. The −9 is a constant, NOT x, so it stays:\nf(3x − 9) → f(3(−x) − 9) = f(−3x − 9)\n\nRule 7 — Reflect x-axis = negate entire outside. Everything outside f flips:\n3f(x+2) − 5 → −[3f(x+2) − 5] = −3f(x+2) + 5\n\nRule 8 — Build up then reflect negates everything:\nf(x) → 2f(x) → 2f(x) + 4 → −[2f(x) + 4] = −2f(x) − 4",
@@ -114,6 +134,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 11,
+    kind: "concept",
+    tags: [],
     question: "Define odd and even functions algebraically.\n\nWhat does each tell you about the graph's symmetry?\n\nExample 1: Is f(x) = x⁴ − 3x² + 1 even, odd, or neither? Describe its symmetry.\nExample 2: Is f(x) = x³ − 2x even, odd, or neither? Describe its symmetry.\nExample 3: Is f(x) = x² + x even, odd, or neither?",
     notes: "Substitute −x for every x, simplify, and compare to the original f(x). Also tests geometric understanding.",
     solution: "Even function: f(−x) = f(x) — symmetric about the y-axis.\nOdd function: f(−x) = −f(x) — symmetric about the origin (180° rotation).\nIf neither condition holds, it's neither.\n\nExample 1: f(−x) = (−x)⁴ − 3(−x)² + 1 = x⁴ − 3x² + 1 = f(x). Even — symmetric about the y-axis.\nExample 2: f(−x) = (−x)³ − 2(−x) = −x³ + 2x = −(x³ − 2x) = −f(x). Odd — symmetric about the origin.\nExample 3: f(−x) = (−x)² + (−x) = x² − x ≠ f(x) and ≠ −f(x). Neither.",
@@ -122,6 +144,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 12,
+    kind: "concept",
+    tags: [],
     question: "Given a statement \"If P then Q\":\n\nWhat is the converse?\nWhat is the inverse?\nWhat is the relationship between the converse and inverse?",
     notes: "Often confused with each other. Converse swaps, inverse negates.",
     solution: "Converse: If Q then P (swap hypothesis and conclusion)\nInverse: If not P then not Q (negate both)\n\nThe converse and inverse are logically equivalent to each other (they are contrapositives of one another).",
@@ -130,6 +154,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 13,
+    kind: "concept",
+    tags: [],
     question: "What is the residue of a modular arithmetic expression?",
     notes: "Foundational modular arithmetic definition.",
     solution: "The residue of a (mod n) is the remainder when a is divided by n. It is the unique value r where 0 ≤ r < n and a ≡ r (mod n). Also sometimes called the least residue.",
@@ -138,6 +164,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 14,
+    kind: "concept",
+    tags: [],
     question: "What are the substitution/compatibility rules for modular arithmetic?\n\nGiven c ≡ c' (mod n):\n\n1. What can you say about c·a (mod n)?\n2. If also d ≡ d' (mod n), what can you say about c + d (mod n)?\n\nExample: Simplify 24a + 15b (mod 10)",
     notes: "These rules let you reduce coefficients and constants mod n before combining. Intuitively: only the last digit of each component matters when computing the last digit of a sum/product.",
     solution: "Multiplication compatibility: If c ≡ c' (mod n), then c·a ≡ c'·a (mod n) for any integer a.\n\nAddition compatibility: If c ≡ c' (mod n) and d ≡ d' (mod n), then c + d ≡ c' + d' (mod n).\n\nExample: 24 ≡ 4 (mod 10) and 15 ≡ 5 (mod 10)\nSo 24a + 15b ≡ 4a + 5b (mod 10)",
@@ -146,6 +174,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 15,
+    kind: "concept",
+    tags: [],
     question: "What is a vacuous proof? What is a trivial proof?\n\nFor each: which part of \"If P then Q\" makes the proof work, and why?",
     notes: "These are the two \"easy\" proof techniques for conditional statements. One exploits the hypothesis, the other the conclusion.",
     solution: "Vacuous proof: P is always false, so \"If P then Q\" is automatically true (regardless of Q). The hypothesis can never be satisfied, so the implication holds vacuously.\n\nTrivial proof: Q is always true, so \"If P then Q\" is automatically true (regardless of P). The conclusion is always satisfied, so the implication holds trivially.\n\nKey insight: A conditional \"If P then Q\" is only false when P is true and Q is false. If P is always false (vacuous) or Q is always true (trivial), the conditional is guaranteed true.",
@@ -154,6 +184,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 16,
+    kind: "concept",
+    tags: [],
     question: "Five rules about multiplying in modular arithmetic:\n\n1. If a ≡ b (mod n), what happens when you multiply both sides AND the modulus by k?\n2. If a ≡ b (mod n), what happens when you multiply both sides by k but keep the modulus?\n3. If a ≡ b and c ≡ d (mod n), what can you say about a·c?\n4. If a ≡ b (mod n), what can you say about aᵏ for positive integer k?\n5. If k·a ≡ k·b (mod n), can you cancel k? Under what condition?",
     notes: "Standard names: 1=Scaling, 2=Multiplication compatibility, 3=Product rule (congruence product), 4=Power rule, 5=Cancellation law. Rules 1–4 always work. Rule 5 (cancellation) is the trap — only works when gcd(k,n)=1.",
     solution: "1. Scaling both sides and modulus: a ≡ b (mod n) ⟹ ka ≡ kb (mod kn). Always valid.\n   Example: 7 ≡ 2 (mod 5) ⟹ 21 ≡ 6 (mod 15) ✓\n\n2. Multiplying both sides only: a ≡ b (mod n) ⟹ ka ≡ kb (mod n). Always valid.\n   Example: 7 ≡ 2 (mod 5) ⟹ 21 ≡ 6 (mod 5) ✓\n\n3. Multiplying two congruences: if a ≡ b and c ≡ d (mod n), then ac ≡ bd (mod n). Always valid.\n   Example: 7 ≡ 2 and 8 ≡ 3 (mod 5) ⟹ 56 ≡ 6 (mod 5) ✓ (both are 1 mod 5)\n\n4. Exponentiation: if a ≡ b (mod n), then aᵏ ≡ bᵏ (mod n) for any positive integer k. Always valid.\n   (Follows from applying rule 3 repeatedly with the same congruence.)\n   Example: 7 ≡ 2 (mod 5) ⟹ 7³ ≡ 2³ (mod 5) ⟹ 343 ≡ 8 ≡ 3 (mod 5) ✓\n\n5. Cancellation: k·a ≡ k·b (mod n) does NOT always mean a ≡ b (mod n).\n   You can only cancel k if gcd(k, n) = 1 (k and n are coprime).\n   Counterexample: 2·1 ≡ 2·4 (mod 6) ⟹ 2 ≡ 8 (mod 6) ✓, but 1 ≢ 4 (mod 6).\n   General: k·a ≡ k·b (mod n) ⟹ a ≡ b (mod n/gcd(k,n)).",
@@ -162,6 +194,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 17,
+    kind: "concept",
+    tags: [],
     question: "What is the Euclidean algorithm and what does it compute?\n\nFind gcd(252, 105).\nFind gcd(1071, 462).",
     notes: "The most efficient method for finding GCD. Repeatedly replace the larger number with the remainder of dividing the two. Stops when remainder is 0.",
     solution: "The Euclidean algorithm computes gcd(a, b) by repeatedly applying: gcd(a, b) = gcd(b, a mod b), until the remainder is 0. The last nonzero remainder is the GCD.\n\nExample 1: gcd(252, 105)\n252 = 2 × 105 + 42\n105 = 2 × 42 + 21\n42 = 2 × 21 + 0\ngcd(252, 105) = 21\n\nExample 2: gcd(1071, 462)\n1071 = 2 × 462 + 147\n462 = 3 × 147 + 21\n147 = 7 × 21 + 0\ngcd(1071, 462) = 21",
@@ -170,6 +204,8 @@ const DEFAULT_QUESTIONS = [
   },
   {
     id: 18,
+    kind: "concept",
+    tags: [],
     question: "Simplify √(p + q√n) into the form a + b√n.\n\nMethod: Assume the answer is a + b√n. Square both sides: (a + b√n)² = a² + b²n + 2ab√n. Match parts: p = a² + b²n, q = 2ab. Solve for a and b.\n\nExample 1: Simplify √(3 + 2√2).\nExample 2: Simplify √(5 + 2√6).",
     notes: "Denesting nested radicals. Square the assumed form, match rational and irrational parts, solve the system.",
     solution: "Example 1: √(3 + 2√2). Assume a + b√2.\np = a² + 2b² = 3, q = 2ab = 2 → ab = 1 → b = 1/a.\na² + 2/a² = 3 → a⁴ − 3a² + 2 = 0 → (a²−1)(a²−2) = 0 → a² = 1, so a = 1, b = 1.\nAnswer: 1 + √2.\nVerify: (1 + √2)² = 1 + 2√2 + 2 = 3 + 2√2 ✓\n\nExample 2: √(5 + 2√6). Assume a + b√6.\np = a² + 6b² = 5, q = 2ab = 2 → ab = 1 → b = 1/a.\na² + 6/a² = 5 → a⁴ − 5a² + 6 = 0 → (a²−2)(a²−3) = 0 → a² = 2 or a² = 3.\na² = 2: a = √2, b = 1/√2 = √2/2. Answer: √2 + (√2/2)√6 = √2 + √3.\nVerify: (√2 + √3)² = 2 + 2√6 + 3 = 5 + 2√6 ✓",
@@ -232,8 +268,8 @@ function mergeDefaults(loaded) {
     const merged = { ...q };
     for (const key of Object.keys(def)) {
       if (key === "id") continue;
-      // Overwrite question/solution/notes from defaults (allows edits to propagate)
-      if (key === "question" || key === "solution" || key === "notes") {
+      // Overwrite question/solution/notes/kind from defaults (allows edits to propagate)
+      if (key === "question" || key === "solution" || key === "notes" || key === "kind") {
         merged[key] = def[key];
       } else if (merged[key] === undefined) {
         merged[key] = def[key];
@@ -376,6 +412,8 @@ function SpacedRepTracker() {
   const [addQ, setAddQ] = useState("");
   const [addN, setAddN] = useState("");
   const [addS, setAddS] = useState("");
+  const [addKind, setAddKind] = useState("problem");
+  const [kindFilter, setKindFilter] = useState("all");
   const [showSolution, setShowSolution] = useState(null);
   const fileRef = useRef(null);
   const prevCountRef = useRef(0);
@@ -450,11 +488,11 @@ function SpacedRepTracker() {
 
   const doAdd = async () => {
     if (!addQ.trim()) return;
-    const q = { id: nextId(qs), title: addT.trim() || undefined, question: addQ.trim(), notes: addN.trim(), solution: addS.trim(), dateAdded: TODAY, attempts: [{ date: TODAY, result: "pass" }] };
+    const q = { id: nextId(qs), kind: addKind, tags: [], title: addT.trim() || undefined, question: addQ.trim(), notes: addN.trim(), solution: addS.trim(), dateAdded: TODAY, attempts: [{ date: TODAY, result: "pass" }] };
     const updated = [...qs, q];
     setQs(updated);
     await save(updated);
-    setAddT(""); setAddQ(""); setAddN(""); setAddS("");
+    setAddT(""); setAddQ(""); setAddN(""); setAddS(""); setAddKind("problem");
     flash("Added");
     setTab("all");
   };
@@ -581,13 +619,14 @@ function SpacedRepTracker() {
   const expWarn = expAgo === null ? "Never exported" : expAgo === 0 ? null : `Exported ${expAgo}d ago`;
 
   const list = tab === "review" ? dueQs : qs;
+  const kindFiltered = kindFilter === "all" ? list : list.filter((q) => (q.kind || "problem") === kindFilter);
   const searched = search
-    ? list.filter((q) =>
+    ? kindFiltered.filter((q) =>
         q.question.toLowerCase().includes(search.toLowerCase()) ||
         (q.title && q.title.toLowerCase().includes(search.toLowerCase())) ||
         (q.notes && q.notes.toLowerCase().includes(search.toLowerCase()))
       )
-    : list;
+    : kindFiltered;
 
   const sorted = [...searched].sort((a, b) => {
     // In review tab, push failed-today questions to the bottom
@@ -707,6 +746,11 @@ function SpacedRepTracker() {
               style={{ ...inputStyle, fontSize: 13, marginTop: 8 }} />
             <textarea value={addS} onChange={(e) => setAddS(e.target.value)} placeholder="Solution (optional, hidden until revealed)..."
               style={{ ...inputStyle, fontSize: 13, marginTop: 8, minHeight: 60, resize: "vertical" }} />
+            <div style={{ display: "flex", gap: 4, marginTop: 8 }}>
+              {[["problem", "Problem"], ["concept", "Concept"]].map(([v, l]) => (
+                <button key={v} onClick={() => setAddKind(v)} style={pillBtn(addKind === v)}>{l}</button>
+              ))}
+            </div>
             <button onClick={doAdd} disabled={!addQ.trim()}
               style={{ ...btn(C.accent), marginTop: 10, opacity: addQ.trim() ? 1 : 0.4, cursor: addQ.trim() ? "pointer" : "default" }}>
               Add Question
@@ -720,6 +764,11 @@ function SpacedRepTracker() {
             <div style={{ display: "flex", gap: 4 }}>
               {[["stalest", "Stalest"], ["oldest", "Oldest"], ["newest", "Newest"]].map(([v, l]) => (
                 <button key={v} onClick={() => setSort(v)} style={pillBtn(sort === v)}>{l}</button>
+              ))}
+            </div>
+            <div style={{ display: "flex", gap: 4 }}>
+              {[["all", "All"], ["problem", "Problems"], ["concept", "Concepts"]].map(([v, l]) => (
+                <button key={v} onClick={() => setKindFilter(v)} style={pillBtn(kindFilter === v)}>{l}</button>
               ))}
             </div>
             {tab === "all" && (
@@ -764,7 +813,10 @@ function SpacedRepTracker() {
                         </div>
                       ) : (
                         <>
-                          {q.title && <div style={{ fontSize: 11, color: C.dim, fontFamily: MONO, marginBottom: 2 }}>{q.title}</div>}
+                          <div style={{ display: "flex", gap: 6, alignItems: "center", marginBottom: 2 }}>
+                            {q.title && <span style={{ fontSize: 11, color: C.dim, fontFamily: MONO }}>{q.title}</span>}
+                            <span style={{ fontSize: 9, fontFamily: MONO, fontWeight: 600, letterSpacing: "0.05em", padding: "1px 5px", borderRadius: 3, background: (q.kind || "problem") === "concept" ? "#6366f1" + "22" : C.accent + "22", color: (q.kind || "problem") === "concept" ? "#818cf8" : C.accent }}>{(q.kind || "problem").toUpperCase()}</span>
+                          </div>
                           <div style={{ fontSize: 14, lineHeight: 1.5, whiteSpace: "pre-line", overflow: "hidden",
                             display: "-webkit-box", WebkitLineClamp: isExp ? 999 : 2, WebkitBoxOrient: "vertical" }}>
                             {q.question}
