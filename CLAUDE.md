@@ -60,3 +60,7 @@ Most sessions here are "add to spaced rep: [topic]". The workflow:
 - **Never edit storage keys** — they must stay identical across versions
 - The `DEFAULT_QUESTIONS` array is the rebuild safety net — it must be easy to find at the top of the file
 - Questions added via browser UI only persist in localStorage (not in git) — prefer adding via Claude Code
+
+## Pending / TODO / Future / Backlog / Deferred / Later
+
+(none currently)
