@@ -13,6 +13,8 @@ The banner sits just under SuperWhisper's recording card, placed from SuperWhisp
 
 Every press the script catches goes into `nudge_log.csv` (timestamp, kind, key). `superwhisper_nobanner` means a press within 4 s of the last banner, which was logged but got no banner. A press the script never caught leaves no row, so to check for misses, compare the log with the folder times in `%LOCALAPPDATA%\com.superwhisper.app\recordings\`. Test the banner without pressing anything: `"C:\Program Files\AutoHotkey-v2\AutoHotkey64.exe" dictation-nudge.ahk --test` (this replaces the running copy, so relaunch it normally afterwards).
 
+The script never shows an AutoHotkey error box: any runtime error goes to `nudge_errors.log` (message, line, stack) and that press is skipped. Two known traps, both handled in the script: Dropbox briefly locks `nudge_log.csv` while syncing (log writes retry, then drop the row), and SuperWhisper (elevated) swallows Ctrl+Space when it starts AFTER this script, so the script reinstalls its keyboard hook whenever SuperWhisper's process ID changes (`hook_reinstalled` row). No Ctrl+Space rows while SuperWhisper is running = suspect hook order first. Turning SuperWhisper off/on: `_task-managment/ahk-watchdog/superwhisper_toggle.ps1`.
+
 The log is there so the switch can be counted later ("how often did I use SuperWhisper vs Ctrl+D in Claude this week").
 
 ## Running
