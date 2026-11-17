@@ -28,9 +28,18 @@ SetWorkingDir %A_ScriptDir%
 Menu, Tray, Tip, Dictation nudge (Ctrl+D in Claude)
 
 global LastNudge := 0
+global BannerHwnd := 0
 global LogFile := A_ScriptDir . "\nudge_log.csv"
 if !FileExist(LogFile)
     FileAppend, timestamp`,kind`,key`n, %LogFile%
+
+; Self-test: `AutoHotkey.exe dictation-nudge.ahk --test` shows the banner once and exits
+; (SingleInstance Force means it replaces the running copy - relaunch normally after).
+if (A_Args[1] = "--test") {
+    ShowBanner()
+    Sleep, 4000
+    ExitApp
+}
 
 #IfWinActive ahk_exe claude.exe
 ~^Space::Nudge("ctrl+space")
@@ -39,9 +48,14 @@ if !FileExist(LogFile)
 #IfWinActive
 
 Nudge(key) {
+    ; Log EVERY press before the debounce, so the log is a complete count of what the
+    ; hook saw (debounced presses are marked, not dropped). A press the hook never saw
+    ; still leaves no row - cross-check against SuperWhisper's recordings folder.
     ; debounce: push-to-talk auto-repeats while held
-    if (A_TickCount - LastNudge < 4000)
+    if (A_TickCount - LastNudge < 4000) {
+        LogRow("superwhisper_nobanner", key)
         return
+    }
     LastNudge := A_TickCount
     LogRow("superwhisper", key)
     ShowBanner()
@@ -63,10 +77,39 @@ ShowBanner() {
     Gui, Nudge:Font, s11 norm cD0D8E0, Segoe UI
     Gui, Nudge:Add, Text, , Faster and better. SuperWhisper only when you need live words.
     WinSet, Transparent, 235
-    Gui, Nudge:Show, NoActivate AutoSize xCenter y80
+    ; Bottom-center of the work area, NOT the top: SuperWhisper's always-on-top
+    ; recording window (elevated) sits at top-center and covered the banner there
+    ; (2026-11-17). Show hidden first to measure, then place.
+    DetectHiddenWindows, On   ; else WinGetPos sees nothing on the hidden window -> blank x/y
+    Gui, Nudge:Show, NoActivate AutoSize Hide
+    Gui, Nudge:+LastFound
+    BannerHwnd := WinExist()
+    WinGetPos, , , bw, bh, ahk_id %BannerHwnd%
+    ; Anchor just UNDER SuperWhisper's recording card, where his eyes already go.
+    ; The card is the top ~21% of SuperWhisper's mostly see-through window
+    ; (measured 2026-11-17 at 150% scaling: window 425,48-906,720 logical; card
+    ; bottom ~ y187). Fallback if that window is not found: bottom-center.
+    WinGetPos, sx, sy, sw, sh, Superwhisper ahk_exe Superwhisper.exe
+    if (sw > 100 && sh > 100) {
+        bx := sx + (sw - bw) // 2
+        by := sy + Round(sh * 0.21) + 10
+    } else {
+        SysGet, wa, MonitorWorkArea
+        bx := waLeft + (waRight - waLeft - bw) // 2
+        by := waBottom - bh - 140
+    }
+    Gui, Nudge:Show, NoActivate x%bx% y%by%
+    SetTimer, KeepOnTop, 200
     SetTimer, HideBanner, -3500
 }
 
+; Re-assert topmost while visible, in case SuperWhisper's window is raised after ours.
+KeepOnTop:
+    if WinExist("ahk_id " . BannerHwnd)
+        DllCall("SetWindowPos", "Ptr", BannerHwnd, "Ptr", -1, "Int", 0, "Int", 0, "Int", 0, "Int", 0, "UInt", 0x13)
+return
+
 HideBanner:
+    SetTimer, KeepOnTop, Off
     Gui, Nudge:Destroy
 return

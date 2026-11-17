@@ -9,7 +9,9 @@ Andrew wants to switch from SuperWhisper to Claude Desktop's built-in dictation 
 - Ctrl+Space (SuperWhisper toggle) and Alt+Space (push-to-talk) -> shows a large banner, "Ctrl+D = Claude dictation", near the top of the screen for about 3.5 s. The key still passes through, so SuperWhisper still records. It is a nudge, not a block.
 - Ctrl+D in Claude -> logged only, no banner.
 
-Every press goes into `nudge_log.csv` (timestamp, kind, key), so the switch can be counted later ("how often did I use SuperWhisper vs Ctrl+D in Claude this week").
+The banner sits just under SuperWhisper's recording card, placed from SuperWhisper's window position each time it shows. If that window can't be found, it goes to the bottom center. It is pushed back on top every 200 ms while it shows, because SuperWhisper's always-on-top window would otherwise cover it.
+
+Every press the script catches goes into `nudge_log.csv` (timestamp, kind, key). `superwhisper_nobanner` means a press within 4 s of the last banner, which was logged but got no banner. A press the script never caught leaves no row, so to check for misses, compare the log with the folder times in `%LOCALAPPDATA%\com.superwhisper.app\recordings\`. Test the banner without pressing anything: `AutoHotkey.exe dictation-nudge.ahk --test` (this replaces the running copy, so relaunch it normally afterwards), so the switch can be counted later ("how often did I use SuperWhisper vs Ctrl+D in Claude this week").
 
 ## Running
 
