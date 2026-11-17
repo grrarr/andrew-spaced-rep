@@ -24,6 +24,8 @@
 ;   - Separate script on purpose: never merge into the v1 7300 remaps/widgets scripts.
 ;     Launched non-elevated by the Startup shortcut "dictation-nudge.lnk"; never from
 ;     an elevated task (breaks keyboard hooks).
+; Errors: OnError writes every runtime error to nudge_errors.log and suppresses the
+;   dialog (Andrew 2026-11-17: an error dialog kept popping on the first press).
 ; Log: nudge_log.csv beside this file, one row per press the hook SAW (superwhisper,
 ;   superwhisper_nobanner = debounced, ctrl_d). A press the hook never saw leaves no
 ;   row; cross-check against %LOCALAPPDATA%\com.superwhisper.app\recordings\ folder times.
@@ -41,6 +43,17 @@ global Banner := 0
 global LogFile := A_ScriptDir "\nudge_log.csv"
 if !FileExist(LogFile)
     FileAppend "timestamp,kind,key`n", LogFile
+
+; Never show an AHK error dialog: a nudge that pops a modal on the first press is
+; worse than no nudge. Any runtime error is written to nudge_errors.log beside this
+; file (message, line, stack) and swallowed. Read that log to find the real cause.
+OnError LogError
+LogError(e, mode) {
+    try FileAppend FormatTime(, "yyyy-MM-dd HH:mm:ss") " [" mode "] " Type(e) ": " e.Message
+        . " | extra=" e.Extra " | line " e.Line " | " e.What "`n" e.Stack "`n---`n"
+        , A_ScriptDir "\nudge_errors.log"
+    return 1   ; 1 = handled: suppress the dialog, abort just this thread
+}
 
 if (A_Args.Length && A_Args[1] = "--test") {
     ShowBanner()
