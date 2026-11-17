@@ -100,7 +100,17 @@ Nudge(key) {
 }
 
 LogRow(kind, key) {
-    FileAppend FormatTime(, "yyyy-MM-dd HH:mm:ss") "," kind "," key "`n", LogFile
+    ; The csv lives in Dropbox, which briefly locks it while syncing (OSError 32, "being
+    ; used by another process") - that was the first-press error dialog (2026-11-17).
+    ; Retry, then drop the row: logging must never block or break the nudge.
+    line := FormatTime(, "yyyy-MM-dd HH:mm:ss") "," kind "," key "`n"
+    Loop 5 {
+        try {
+            FileAppend line, LogFile
+            return
+        }
+        Sleep 150
+    }
 }
 
 ShowBanner() {
