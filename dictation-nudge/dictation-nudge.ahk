@@ -55,6 +55,26 @@ LogError(e, mode) {
     return 1   ; 1 = handled: suppress the dialog, abort just this thread
 }
 
+; Hook-order trap (found 2026-11-17): low-level keyboard hooks run newest-first, and
+; SuperWhisper (elevated) swallows Ctrl+Space. If SuperWhisper starts AFTER this script
+; (watchdog relaunch after wake, a resume), its hook sits in front and our hotkeys never
+; fire - no log row at all. So whenever SuperWhisper's PID changes, force-reinstall our
+; hook to put it back in front.
+global SwPid := ProcessExist("Superwhisper.exe")
+SetTimer WatchSuperWhisper, 3000
+WatchSuperWhisper() {
+    global SwPid
+    pid := ProcessExist("Superwhisper.exe")
+    if (pid != SwPid) {
+        SwPid := pid
+        if pid {
+            Sleep 3000   ; let SuperWhisper install its own hook first
+            InstallKeybdHook true, true
+            LogRow("hook_reinstalled", "pid " pid)
+        }
+    }
+}
+
 if (A_Args.Length && A_Args[1] = "--test") {
     ShowBanner()
     Sleep 4000
