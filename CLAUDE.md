@@ -67,4 +67,4 @@ Most sessions here are "add to spaced rep: [topic]". The workflow:
 
 ## Pending / TODO / Future / Backlog / Deferred / Later
 
-(none currently)
+- **Combined dictation (SuperWhisper live preview + Claude Ctrl+D) - TABLED 2026-11-17 by Andrew.** One hotkey in Claude that gives live words without a duplicate paste. Options, facts and open questions: `dictation-nudge/COMBINED-DICTATION-IDEAS.md`. Unblock: Andrew picks it up again.
