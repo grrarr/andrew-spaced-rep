@@ -86,9 +86,14 @@ ShowBanner() {
     WinGetPos , , &bw, &bh, g.Hwnd
     ; Anchor just under SuperWhisper's card: the card is the top ~21% of its mostly
     ; see-through window (measured 2026-11-17, 150% scaling). Fallback: bottom-center.
-    sw := 0, sh := 0
-    try WinGetPos &sx, &sy, &sw, &sh, "Superwhisper ahk_exe Superwhisper.exe"
-    if (sw > 100 && sh > 100) {
+    ; v2 trap: when WinGetPos throws (no SuperWhisper window), it leaves its output
+    ; vars UNSET even if pre-assigned, so test them only inside the try.
+    found := false
+    try {
+        WinGetPos &sx, &sy, &sw, &sh, "Superwhisper ahk_exe Superwhisper.exe"
+        found := (sw > 100 && sh > 100)
+    }
+    if found {
         bx := sx + (sw - bw) // 2
         by := sy + Round(sh * 0.21) + 10
     } else {
