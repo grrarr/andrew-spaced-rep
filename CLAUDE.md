@@ -61,6 +61,10 @@ Most sessions here are "add to spaced rep: [topic]". The workflow:
 - The `DEFAULT_QUESTIONS` array is the rebuild safety net — it must be easy to find at the top of the file
 - Questions added via browser UI only persist in localStorage (not in git) — prefer adding via Claude Code
 
+## Side tool: dictation nudge (not part of the web app)
+
+`dictation-nudge/` holds an AutoHotkey v1 script that flashes "Ctrl+D = Claude dictation" when Andrew presses a SuperWhisper hotkey (Ctrl+Space / Alt+Space) inside Claude Desktop, and logs presses to `nudge_log.csv`. It runs at login from a Startup shortcut. Details: `dictation-nudge/README.md`.
+
 ## Pending / TODO / Future / Backlog / Deferred / Later
 
 (none currently)
