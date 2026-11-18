@@ -30,7 +30,7 @@
 ;   superwhisper_nobanner = debounced, ctrl_d). A press the hook never saw leaves no
 ;   row; cross-check against %LOCALAPPDATA%\com.superwhisper.app\recordings\ folder times.
 ; Self-test: AutoHotkey64.exe dictation-nudge.ahk --test  (shows the banner once and
-;   exits; #SingleInstance Force replaces the running copy - relaunch normally after).
+;   then relaunches a normal copy itself - #SingleInstance Force kills the live one).
 ; Docs: README.md, COMBINED-DICTATION-IDEAS.md beside this file.
 ; ============================================================================
 #SingleInstance Force
@@ -78,6 +78,10 @@ WatchSuperWhisper() {
 if (A_Args.Length && A_Args[1] = "--test") {
     ShowBanner()
     Sleep 4000
+    ; #SingleInstance Force made this test copy KILL the live one. Relaunch a normal
+    ; copy before exiting, or the nudge silently stays dead (happened 2026-11-17:
+    ; dead from 17:36 until 21:07 after a test run).
+    Run '"' A_AhkPath '" "' A_ScriptFullPath '"'
     ExitApp
 }
 
